@@ -1,0 +1,32 @@
+{
+  "name": "tmd",
+  "version": "1.0.0",
+  "description": "A Simple Application for managing movie and stars details",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart":"npm install",
+    "postinstall":"bower install",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galaxian/tmd.git"
+  },
+  "keywords": [
+    "movie",
+    "imdb",
+    "stars",
+    "actors",
+    "popular"
+  ],
+  "author": "Satya J, Venky M",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/galaxian/tmd/issues"
+  },
+  "homepage": "https://github.com/galaxian/tmd#readme",
+  "devDependencies": {
+    "express": "^4.13.4"
+  }
+}

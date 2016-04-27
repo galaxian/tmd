@@ -1,0 +1,37 @@
+{
+  "name": "tmd",
+  "description": "A Simple Application for managing movie and stars details",
+  "main": "index.js",
+  "authors": [
+    "Satya J",
+    "Venky M"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "movie",
+    "imdb",
+    "stars",
+    "actors",
+    "popular"
+  ],
+  "homepage": "https://github.com/galaxian/tmd",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "1.11.1",
+    "bootstrap": "3.3.6",
+    "angular": "1.4.8",
+    "bootstrap-material-design": "^0.5.9",
+    "components-font-awesome": "^4.6.1"
+  },
+  "resolutions": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.6"
+  }
+}
