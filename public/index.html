@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="tmd">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +8,41 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/ripples.min.css">
+		<!-- <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/ripples.min.css"> -->
 		<link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<!-- For this demo, include the font-faces needed by mdIcon above -->
+		<link rel="stylesheet" href="assets/styles/main.css">
+  <style>
+    @font-face {
+      font-family:"icomoon";
+      src:url("https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot");
+      font-weight:normal;
+      font-style:normal;
+    }
+    @font-face {
+      font-family: 'icomoon';
+      src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?-cmq1um');
+      src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?#iefix-cmq1um') format('embedded-opentype'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.woff?-cmq1um') format('woff'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.ttf?-cmq1um') format('truetype'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.svg?-cmq1um#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
 	</head>
-	<body>
+	<body ng-cloak>
 		
-		<nav class="navbar navbar-default" role="navigation">
+		<!-- <nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 						<span class="sr-only">Toggle navigation</span>
@@ -33,7 +53,6 @@
 					<a class="navbar-brand" href="#">The Movie Database</a>
 				</div>
 		
-				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#"><i class="fa fa-home"></i></a></li>
@@ -56,18 +75,49 @@
 							</ul>
 						</li>
 					</ul>
-				</div><!-- /.navbar-collapse -->
+				</div>
 			</div>
 		</nav>
 		<br/><br/>
-
-		<div class="jumbotron jumbotron-fluid">
-  			<div class="container">
-    			<h1 class="display-1">Holaaa!!!! Welcome to the Movie World...</h1>
-    			<hr class="m-y-2">
-  				<p>Here you can search all your Favourite Actors and Movies, and add them to your personal database.</p>
-  			</div>
-		</div>
+ -->
+ <!-- 	<md-toolbar layout="row" class="md-whiteframe-z3" style="padding:0px;margin:0px;position:fixed;">
+ 	<div>
+    <md-button>Home</md-button>
+    <md-button>Item 1</md-button>
+    <md-button>Item 2</md-button>
+    <md-menu>
+        <md-button md-menu-origin ng-click="$mdOpenMenu()">Help</md-button>
+        <md-menu-content width="2">
+            <md-menu-item>
+                <md-button>Help</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button>About</md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>
+</md-toolbar> -->
+<md-toolbar>
+      <div class="md-toolbar-tools" ng-init="font={name: 'icon-home',color: '#777', theme:'md-warn md-hue-5',size:24,padding:10}">
+      	<h2>
+          <span>TMD<sup>v1.0</sup></span>
+        </h2>
+        <md-button href="#/" class="md-fab md-warn md-icon-button" aria-label="Home">
+          	<i class="fa fa-2x fa-home"></i>
+        </md-button>
+        <md-button aria-label="Movies" href="#/movies"><b>Movies</b></md-button>
+        <span flex></span>
+        <md-button href="#/" class="md-fab md-primary" aria-label="Home">
+          	<i class="fa fa-lg fa-bell"></i>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <br/>
+  	<div ng-view></div>
 
 
 
@@ -75,13 +125,26 @@
 		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
-		<script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
- 		<script>
- 			  $(function () {
-    			$.material.init();
-  		});
- 		</script>
+		<!-- <script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+		<script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script> -->
+
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-route/angular-route.min.js"></script>
+  		<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  		<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  		<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+  		<!-- Angular Material Library -->
+  		<script src="bower_components/angular-material/angular-material.min.js"></script>
+
+  		<script type="text/javascript" src="scripts/app/app.js"></script>
+
+  		<script type="text/javascript" src="scripts/components/services/movies.service.js"></script>
+
+  		<script type="text/javascript" src="scripts/app/dashboard/dashboard.controller.js"></script>
+  		<script type="text/javascript" src="scripts/app/movies/movies.controller.js"></script>
+
+
+  		<!-- Routes -->
+  		<script type="text/javascript" src="scripts/app/movies/movies.js"></script>
 	</body>
 </html>

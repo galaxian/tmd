@@ -32,6 +32,11 @@
   },
   "resolutions": {
     "jquery": "~2.1.1",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "angular": "^1.4.8"
+  },
+  "dependencies": {
+    "angular-material": "^1.0.8",
+    "angular-route": "1.4.8"
   }
 }
